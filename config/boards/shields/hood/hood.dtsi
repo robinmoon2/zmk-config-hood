@@ -23,7 +23,7 @@
 
     default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
-        columns = <3>;
+        columns = <6>;
         rows = <3>;
         map = <
         //  LKey 1 |LKey 2 |LKey 3      RKey 1 |RKey 2 |RKey 3
