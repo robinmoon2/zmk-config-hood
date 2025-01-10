@@ -2,8 +2,6 @@
 
 &default_transform {
     col-offset = <5>;
-    kscan = <&kscan0>;
-
 };
 
 &kscan0 {

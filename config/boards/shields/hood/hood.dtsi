@@ -1,14 +1,29 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+
+        row-gpios
+            = <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+
+    };
+
+
     chosen {
         zmk,kscan = &kscan0;
-        zmk,physical-layout = &physical_layout0;   
+        zmk,physical-layout = &physical_layout0;
+        // Other chosen items
     };
-    
-    default_transform: keymap_transform0 { 
+
+    default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
-        columns = <6>;
+        columns = <10>;
         rows = <3>;
         map = <
         //  LKey 1 |LKey 2 |LKey 3      RKey 1 |RKey 2 |RKey 3
@@ -18,16 +33,5 @@
         //  LKey 7 |LKey 8 |LKey 9      RKey 7 |RKey 8 |RKey 9
             RC(2,0) RC(2,1) RC(2,2)     RC(2,3) RC(2,4) RC(2,5)
         >;
-    };
-
-    kscan0: kscan_0 {
-    compatible = "zmk,kscan-gpio-matrix";
-    label = "KSCAN";
-    diode-direction = "col2row"; 
-    row-gpios
-        = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        ;
-    };
+    };    
 };
