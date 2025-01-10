@@ -9,7 +9,7 @@
 
     default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
-        columns = <6>;
+        columns = <5>;
         rows = <3>;
         map = <
         //  LKey 1 |LKey 2 |LKey 3      RKey 1 |RKey 2 |RKey 3
@@ -28,9 +28,9 @@
         wakeup-source;
 
         row-gpios
-            = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
 
     };
