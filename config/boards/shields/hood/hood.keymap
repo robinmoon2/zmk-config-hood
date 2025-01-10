@@ -8,9 +8,9 @@
             // |     A     |     B     |     C     |
             // |     D     |     E     |     F     |
             bindings = <
-                &kp Z    &kp M    &kp K
-                &kp A    &kp B    &kp C
-                &kp D    &kp E    &kp F
+                &kp A    &kp Z    &kp E   &kp R   &kp T   &kp Y 
+                &kp Q    &kp S    &kp D   &kp F   &kp G   &kp H 
+                &kp W    &kp X    &kp C   &kp V   &kp B   &kp N 
             >;
         };
     };
