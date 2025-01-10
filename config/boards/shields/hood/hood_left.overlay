@@ -10,6 +10,6 @@
         ;
 };
 
-&default_layout {
+&default_transform {
     kscan = <&kscan0>;
 };
