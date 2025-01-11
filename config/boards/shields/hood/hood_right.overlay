@@ -12,3 +12,7 @@
 
         ;
 };
+
+&default_layout {
+    kscan = <&kscan0>;
+};
