@@ -35,7 +35,7 @@
 
     };
     
-    default_layout: default_layout {
+    default_layout: default_layout0 {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
         transform = <&default_transform>;
