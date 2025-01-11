@@ -7,13 +7,17 @@
 
         default_layer { // Layer 0
             // -------------------------------------
-            // |     Z     |     M     |     K     |
-            // |     A     |     B     |     C     |
-            // |     D     |     E     |     F     |
+            // |     Echap     |     &     |      é    |     "     |      '    |      (    |
+            // |     tab       |     a     |      z    |     e     |      r    |      t    | 
+            // |     maxup     |     q     |      s    |     d     |      f    |      g    |
+            // |     maj       |     Lctrl |      w    |     x     |      c    |      v    |
+            // |               |     win   |      alt  |     Fn    |      alt  |      sp   |
             bindings = <
-                &kp A    &kp Z    &kp E   &kp R   &kp T   &kp Y 
-                &kp Q    &kp S    &kp D   &kp F   &kp G   &kp H 
-                &kp W    &kp X    &kp C   &kp V   &kp B   &kp N 
+                &kp ESC         &kp AMPS    &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS    &kp ESC     &kp AMPS    &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS 
+                &kp TAB         &kp A       &kp Z           &kp E         &kp R     &kp T                   &kp ESC     &kp AMPS    &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS 
+                &kp CAPSLOCK    &kp Q       &kp S           &kp D         &kp F     &kp G                   &kp ESC     &kp AMPS    &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS 
+                &kp CAPS        &kp LCTRL   &kp W           &kp X         &kp C     &kp V                   &kp ESC     &kp AMPS   &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS 
+                &kp CAPS        &kp LWIN    &kp LEFT_ALT    &kp LEFT_ALT  &kp DEL   &kp SPACE               &kp ESC     &kp AMPS    &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS 
             >;
         };
     };
