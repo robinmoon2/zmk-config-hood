@@ -16,5 +16,5 @@
 };
 
 &default_layout {
-    kscan = <&kscan0>;7
+    kscan = <&kscan0>;
 };

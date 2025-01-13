@@ -15,8 +15,8 @@
             bindings = <
                 &kp ESC         &kp AMPS    &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS    &kp J     &kp AMPS    &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS 
                 &kp TAB         &kp A       &kp Z           &kp E         &kp R     &kp T                   &kp K     &kp AMPS    &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS 
-                &kp CAPSLOCK    &kp Q       &kp S           &kp D         &kp F     &kp G                   &kp L    &kp AMPS    &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS 
-                &kp CAPS        &kp LCTRL   &kp W           &kp X         &kp C     &kp V                   &kp M     &kp AMPS   &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS 
+                &kp CAPSLOCK    &kp Q       &kp S           &kp D         &kp F     &kp G                   &kp L     &kp AMPS    &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS 
+                &kp CAPS        &kp LCTRL   &kp W           &kp X         &kp C     &kp V                   &kp M     &kp AMPS    &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS 
                 &kp CAPS        &kp LWIN    &kp LEFT_ALT    &kp LEFT_ALT  &kp DEL   &kp SPACE               &kp P     &kp AMPS    &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS 
             >;
         };
