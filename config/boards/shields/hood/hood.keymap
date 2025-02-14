@@ -13,7 +13,7 @@
             // |     maj       |     Lctrl |      w    |     x     |      c    |      v    |                |     B     |    N     |     ,    |     ;    |     :    |     !    |
             // |               |     win   |      alt  |     Fn    |      alt  |      SP   |                |     SP    |    Ralt  |    RWIN  |   RCTRL  |    Lmaj  |    mute  |
             bindings = <
-                &kp ESC         &kp AMPS    &kp AMPS        &kp DQT       &kp SQT   &kp LEFT_PARENTHESIS    &kp MINUS   &kp GRAVE      &kp UNDERSCORE   &kp CARET       &kp AT              &kp RIGHT_PARENTHESIS 
+                &kp ESC         &kp AMPS    &kp AMPS        &kp DQT       &kp APOS  &kp LEFT_PARENTHESIS    &kp MINUS   &kp GRAVE      &kp UNDERSCORE   &kp CARET       &kp AT              &kp RIGHT_PARENTHESIS 
                 &kp TAB         &kp A       &kp Z           &kp E         &kp R     &kp T                   &kp Y       &kp U          &kp I            &kp O           &kp P               &kp CARET 
                 &kp CAPSLOCK    &kp Q       &kp S           &kp D         &kp F     &kp G                   &kp H       &kp J          &kp K            &kp L           &kp M               &kp PERCENT 
                 &kp CAPS        &kp LCTRL   &kp W           &kp X         &kp C     &kp V                   &kp B       &kp N          &kp COMMA        &kp SEMICOLON   &kp COLON           &kp EXCLAMATION 
