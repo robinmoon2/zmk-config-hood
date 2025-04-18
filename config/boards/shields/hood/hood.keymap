@@ -7,18 +7,18 @@
 
         default_layer { // Layer 0
             // -------------------------------------
-            // |     Echap     |     &     |      é    |     "     |      '    |      (    |                |     -     |    `     |     _    |     ^    |     à    |     )    |
-            // |     tab       |     a     |      z    |     e     |      r    |      t    |                |     Y     |    U     |     I    |     O    |     P    |     ^    |
-            // |     maxup     |     q     |      s    |     d     |      f    |      g    |                |     H     |    J     |     K    |     L    |     M    |     %    |
-            // |     maj       |     Lctrl |      w    |     x     |      c    |      v    |                |     B     |    N     |     ,    |     ;    |     :    |     !    |
-            // |               |     win   |      alt  |     Fn    |      alt  |      SP   |                |     SP    |    Ralt  |    RWIN  |   RCTRL  |    Lmaj  |    mute  |
+            // |     ESC      |     1     |     2     |     3     |     4     |     5     |                |     6     |     7     |     8     |     9     |     0     |     -     |
+            // |     TAB      |     Q     |     W     |     E     |     R     |     T     |                |     Y     |     U     |     I     |     O     |     P     |     [     |
+            // |     CAPS     |     A     |     S     |     D     |     F     |     G     |                |     H     |     J     |     K     |     L     |     ;     |     '     |
+            // |     SHIFT    |     Z     |     X     |     C     |     V     |     B     |                |     N     |     M     |     ,     |     .     |     /     |     \     |
+            // |              |     WIN   |     ALT   |     FN    |     ALT   |     SP    |                |     SP    |    RALT   |    RWIN   |   RCTRL   |   RSHIFT  |    MUTE   |
             bindings = <
-                &kp ESC         &kp AMPS    &kp AMPS        &kp DQT       &kp APOS  &kp LEFT_PARENTHESIS    &kp MINUS   &kp GRAVE      &kp UNDERSCORE   &kp CARET       &kp AT              &kp RIGHT_PARENTHESIS 
-                &kp TAB         &kp A       &kp Z           &kp E         &kp R     &kp T                   &kp Y       &kp U          &kp I            &kp O           &kp P               &kp CARET 
-                &kp CAPSLOCK    &kp Q       &kp S           &kp D         &kp F     &kp G                   &kp H       &kp J          &kp K            &kp L           &kp M               &kp PERCENT 
-                &kp CAPS        &kp LCTRL   &kp W           &kp X         &kp C     &kp V                   &kp B       &kp N          &kp COMMA        &kp SEMICOLON   &kp COLON           &kp EXCLAMATION 
+                &kp ESC         &kp N1      &kp N2          &kp N3        &kp N4    &kp N5                  &kp N6      &kp N7         &kp N8           &kp N9          &kp N0              &kp MINUS 
+                &kp TAB         &kp Q       &kp W           &kp E         &kp R     &kp T                   &kp Y       &kp U          &kp I            &kp O           &kp P               &kp LBKT 
+                &kp CAPSLOCK    &kp A       &kp S           &kp D         &kp F     &kp G                   &kp H       &kp J          &kp K            &kp L           &kp SEMI            &kp SQT 
+                &kp LSHIFT      &kp Z       &kp X           &kp C         &kp V     &kp B                   &kp N       &kp M          &kp COMMA        &kp DOT         &kp FSLH            &kp BSLH 
                 &kp LCTRL       &kp LWIN    &kp LEFT_ALT    &kp LEFT_ALT  &kp DEL   &kp SPACE               &kp SPACE   &kp RIGHT_ALT  &kp RWIN         &kp RCTRL       &kp RIGHT_SHIFT     &kp C_MUTE 
             >;
         };
     };
- };
+};
