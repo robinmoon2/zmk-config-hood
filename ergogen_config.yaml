@@ -1,0 +1,222 @@
+units:
+  # Proxy Spacing Variables
+  kx: cx
+  ky: cy
+  # Padding Variables
+  px: kx + 4
+  py: ky + 4
+  # Double Padding Variables
+  dpx: kx + 8
+  dpy: ky + 8
+points:
+  zones:
+    matrix:
+      anchor:
+        shift: [100, -100]
+      key:
+        padding: 1ky+2
+        spread: 1kx+2
+        #rotate: -5
+      columns:
+        outer:
+          key.column_net: P14
+          rows:
+            bottom.skip: true
+        pinky:
+          key.column_net: P16
+          key.stagger: 5
+          rows:
+            bottom.skip: true
+        ring:
+          key.column_net: P10
+          key.stagger: 3
+          rows.bottom.column_net: P16
+        middle:
+          key.column_net: P7
+          key.stagger: 4
+          rows.bottom.column_net: P10
+        index:
+          key.column_net: P8
+          key.stagger: -3
+          rows.bottom.column_net: P7
+        inner:
+          key.column_net: P9
+          key.stagger: -5
+          rows:
+            bottom.skip: true
+      rows:
+        bottom:
+          row_net: P15
+          mirror.row_net: P6
+        middle:
+          key.shift: 4
+          row_net: P18
+          mirror.row_net: P5
+        home:
+          row_net: P19
+          mirror.row_net: P4
+          key.stagger: 2
+        top:
+          row_net: P20
+          mirror.row_net: P0
+        even:
+          row_net: P21
+          mirror.row_net: P1
+    thumbs:
+      key:
+        padding: 1ky
+        spread: 1kx
+      anchor:
+        ref: matrix_inner_bottom
+      columns:
+        layer:
+          key.splay: -10
+          key.shift: [1,-1]
+          key.column_net: P8
+        space:
+          key.shift: [2.5,-3.25]
+          key.splay: 75
+          key.width: 1.25kx
+          key.column_net: P9
+      rows:
+        line:
+          row_net: P15
+          mirror.row_net: P6
+
+
+outlines: 
+  raw:
+    - what: rectangle
+      where: true
+      size: [px,py]
+  keys: 
+    - what: rectangle
+      where: true
+      size: [kx,ky]
+  keys_pol:
+    - what: rectangle
+      where: true
+      size: [kx-2,ky-1]
+      fillet: 2
+  board: 
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_even
+          shift: [-0.5px, 0.5py]
+        - ref: matrix_ring_even
+          shift: [-px, 0.5py]
+        - ref: matrix_middle_even
+          shift: [-px, 0.5py]
+        - ref: matrix_middle_even 
+          shift: [0.5px, 0.5py]
+        - ref: matrix_inner_even
+          shift: [2px, 0.5py]
+        - ref: thumbs_layer_line 
+          shift: [2px, -0.3py]
+        - ref: matrix_ring_bottom
+          shift: [0.5px, -0.5py]
+        - ref: matrix_ring_bottom  
+          shift: [-0.5px, -0.5py]
+        - ref: matrix_outer_middle
+          shift: [-0.5px, -0.5py]
+      fillet: 7
+  xLboad:
+    - what: polygon
+      operation: stack 
+      points:
+        - ref: matrix_outer_even
+          shift: [-0.6dpx, 0.6dpy]
+        - ref: matrix_ring_even
+          shift: [-0.6dpx, 0.6dpy]
+        - ref: matrix_middle_even
+          shift: [-0.6dpx, 0.6dpy]
+        - ref: matrix_middle_even 
+          shift: [0.5dpx, 0.5dpy]
+        - ref: matrix_inner_even
+          shift: [2dpx, 0.5dpy]
+        - ref: thumbs_layer_line 
+          shift: [2dpx, -0.5dpy]
+        - ref: matrix_ring_bottom
+          shift: [0.5dpx, -0.5dpy]
+        - ref: matrix_ring_bottom  
+          shift: [-0.5dpx, -0.5dpy]
+        - ref: matrix_outer_middle
+          shift: [-0.5dpx, -0.5dpy]
+  new_board:
+    - where: true
+      what : rectangle
+      size: [cx+10, cy+10]
+      fillet: 1
+  keys_cutout:
+  - name: xLboad
+  - operation: subtract
+    name : keys
+  combo:
+    - name: xLboad
+    - operation: subtract
+      name: keys 
+  new_combo: 
+    - name: board
+    - operation: subtract
+      name: keys_pol
+pcbs:
+  tutorial:
+    outlines:
+      main:
+        outline: board
+    footprints:
+      # Hotswap Choc keys.
+      choc_hotswap:
+        what: choc
+        where: true
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: false
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      promicro:
+        what: promicro
+        params:
+          orientation: "down"
+        where:
+          ref.aggregate.parts: [matrix_inner_top, matrix_inner_top]
+          shift: [0,6]
+          rotate: -90
+      # OLED Screen
+      oled:
+        what: oled
+        params:
+          side: "F"
+          SDA: P2
+          SCL: P3
+        where:
+          ref.aggregate.parts: [matrix_inner_top]
+          shift: [px,1]
+          rotate: 90
+      # Four Pin Reset Button
+      
+      scrollwheel:
+        what: rotary
+        where:
+          ref.aggregate.parts: [matrix_inner_top]
+          shift: [0, -1]
+        params:
+          from: VCC
+          to: P6
+          A: P4
+          B: GND
+          C: P9
+cases:
+  plate:
+    - name: keys_cutout
+      extrude : 1.2
